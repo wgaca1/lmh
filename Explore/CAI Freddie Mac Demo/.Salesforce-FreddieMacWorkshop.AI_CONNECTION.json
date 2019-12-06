@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "g9NkPkDX4i8gMlnY9yN3cd",
+    "name" : "Salesforce-FreddieMacWorkshop",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "hJN8jIw8jIw8jIw-gt-5316746-2019-10-01T15:07:14.125Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "connection to Salesforce org with Loans custom object (related to Accounts)",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

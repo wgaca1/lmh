@@ -1,0 +1,46 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>Dmi3wOLIFvukNXH-gt-2533484-2019-10-01T15:07:14.481Z::conn.xml</types1:EntryId>
+      <types1:Name>ZillowConnection</types1:Name>
+      <types1:ParentFlowIds>XZgjjKPQE8jIw8j-gt-5631222-2019-10-01T15:07:14.792Z::pd.xml,1F96xZ6or3rp3yD-gt-5631232-2019-10-01T15:07:14.839Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>LMH.suborg</types1:CreatedBy>
+      <types1:CreationDate>2019-10-01T15:07:14Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>LMH.suborg</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-01T15:09:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/ZillowConnection/ZillowConnection.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="ZillowConnection"
+                     label="ZillowConnection"
+                     name="ZillowConnection">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/Zillow_API_Services/Zillow_API_Services_svcDef.xml"
+                               guid="7vWfiTWOx2ffdiFAx3ujsM"
+                               name="Zillow_API_Services"
+                               supportsConnectionTest="false"
+                               uuid="446e73c3-726a-490c-974b-4c361ec82d34">
+               <description/>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>7FpfzKALKTceFL1HCnLuqQ</types1:GUID>
+      <types1:DisplayName>ZillowConnection</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-06T12:44:32.898Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

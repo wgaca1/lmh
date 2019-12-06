@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "0Oq3LvgNFbllFtCksoSFuE",
+    "name" : "CAI Freddie Mac Demo",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "Demonstrates an API-based service that accepts a Loan ID as input, searches Salesforce for the Loan, then calls Zillow for property valuation data based on the property address in Salesforce.   \n",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

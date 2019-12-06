@@ -1,0 +1,65 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>hJN8jIw8jIw8jIw-gt-5316746-2019-10-01T15:07:14.125Z::conn.xml</types1:EntryId>
+      <types1:Name>Salesforce-FreddieMacWorkshop</types1:Name>
+      <types1:ParentFlowIds>XZgjjKPQE8jIw8j-gt-5631222-2019-10-01T15:07:14.792Z::pd.xml,1F96xZ6or3rp3yD-gt-5631232-2019-10-01T15:07:14.839Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description>connection to Salesforce org with Loans custom object (related to Accounts)</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>LMH.suborg</types1:CreatedBy>
+      <types1:CreationDate>2019-10-01T15:07:14Z</types1:CreationDate>
+      <types1:ModifiedBy>LMH.suborg</types1:ModifiedBy>
+      <types1:ModificationDate>2019-10-01T15:18:11Z</types1:ModificationDate>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>LMH.suborg</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-01T15:19:05Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connection/Salesforce-FreddieMacWorkshop/Salesforce-FreddieMacWorkshop.conn.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="Salesforce-FreddieMacWorkshop"
+                     label="Salesforce-FreddieMacWorkshop"
+                     name="Salesforce-FreddieMacWorkshop">
+            <description>connection to Salesforce org with Loans custom object (related to Accounts)</description>
+            <tags/>
+            <agent/>
+            <attributes/>
+            <soaConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                          connectorPath="project:/com.activevos.cumulus.cloud.extend.playbook.configuration/config/sfConnector.xml"
+                          name="Salesforce"
+                          supportsConnectionTest="true"
+                          supportsOData="true"
+                          uuid="05fc48f1-e6e1-441b-b700-bac396ca2ed1">
+               <description>Salesforce.com SOA based data connector.</description>
+            </soaConnector>
+            <odata>
+               <enabled>true</enabled>
+               <allowedUsers>
+                  <user>eric@iicstrialtest.com</user>
+                  <user>LMH.suborg</user>
+               </allowedUsers>
+            </odata>
+            <authentication type="$infa_basicform">
+               <attributes>
+                  <attribute encrypted="false" name="username" value="api-user2@ics-demo.org"/>
+                  <attribute encrypted="true" name="password" value=""/>
+                  <attribute encrypted="true" name="token" value=""/>
+                  <attribute encrypted="false"
+                             name="serviceUrl"
+                             value="https://login.salesforce.com/services/Soap/c/40.0"/>
+                  <attribute encrypted="true" name="clientId" value=""/>
+                  <attribute encrypted="true" name="clientSecret" value=""/>
+               </attributes>
+            </authentication>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>g9NkPkDX4i8gMlnY9yN3cd</types1:GUID>
+      <types1:DisplayName>Salesforce-FreddieMacWorkshop</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-06T12:44:32.789Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

@@ -1,0 +1,337 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>gchwAQlBWlD2pHA-gt-5316738-2019-10-01T15:07:14.101Z::svc.xml</types1:EntryId>
+      <types1:Name>Zillow_API_Services</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>LMH.suborg</types1:CreatedBy>
+      <types1:CreationDate>2019-10-01T15:07:14Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>LMH.suborg</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-01T15:09:33Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/Zillow_API_Services/Zillow_API_Services_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="Zillow API Services"
+                            label=""
+                            name="Zillow_API_Services"
+                            uuid="446e73c3-726a-490c-974b-4c361ec82d34">
+            <description/>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"/>
+            <actions>
+               <action category=""
+                       failOnError="false"
+                       forSearch="false"
+                       label="Get Property Valuation from Address"
+                       maxRedirects="100"
+                       name="Get Property Valuation from Address"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description/>
+                  <input>
+                     <parameter label="Street Address"
+                                name="address"
+                                required="true"
+                                testWith="2114 Bigelow Ave"
+                                type="string"/>
+                     <parameter label="City State Zip"
+                                name="citystatezip"
+                                required="true"
+                                testWith="Seattle WA"
+                                type="string"/>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="http://www.zillow.com/webservice/GetSearchResults.htm"
+                                        verb="GET">
+                        <otherParams>
+                           <otherParam name="zws-id">X1-ZWz1gnrdzr5p1n_6y17p</otherParam>
+                        </otherParams>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description=""
+                            name="Valuation Range Low"
+                            property="low"
+                            type="currency"/>
+                     <field description=""
+                            name="Valuation Range High"
+                            property="high"
+                            type="currency"/>
+                     <field description="" name="Code" property="code" type="string"/>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="searchresults">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="schemaLocation" type="string"/>
+                     <field name="request" type="reference">
+                        <options>
+                           <option name="referenceTo">request</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="message" type="reference">
+                        <options>
+                           <option name="referenceTo">message</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="response" type="reference">
+                        <options>
+                           <option name="referenceTo">response</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="request">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="address" type="string"/>
+                     <field name="citystatezip" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="message">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="text" type="string"/>
+                     <field name="code" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="response">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="results" type="reference">
+                        <options>
+                           <option name="referenceTo">results</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="results">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="result" type="reference">
+                        <options>
+                           <option name="referenceTo">result</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="result">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="zpid" type="int"/>
+                     <field name="links" type="reference">
+                        <options>
+                           <option name="referenceTo">links</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="address" type="reference">
+                        <options>
+                           <option name="referenceTo">address</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="zestimate" type="reference">
+                        <options>
+                           <option name="referenceTo">zestimate</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="localRealEstate" type="reference">
+                        <options>
+                           <option name="referenceTo">localRealEstate</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="links">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="homedetails" type="string"/>
+                     <field name="graphsanddata" type="string"/>
+                     <field name="mapthishome" type="string"/>
+                     <field name="comparables" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="address">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="street" type="string"/>
+                     <field name="zipcode" type="int"/>
+                     <field name="city" type="string"/>
+                     <field name="state" type="string"/>
+                     <field name="latitude" type="double"/>
+                     <field name="longitude" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="zestimate">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="amount" type="reference">
+                        <options>
+                           <option name="referenceTo">amount</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="last-updated" type="string"/>
+                     <field name="oneWeekChange" type="reference">
+                        <options>
+                           <option name="referenceTo">oneWeekChange</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="valueChange" type="reference">
+                        <options>
+                           <option name="referenceTo">valueChange</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="valuationRange" type="reference">
+                        <options>
+                           <option name="referenceTo">valuationRange</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="percentile" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="amount">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="currency" type="string"/>
+                     <field name="text" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="oneWeekChange">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="deprecated" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="valueChange">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="currency" type="string"/>
+                     <field name="duration" type="int"/>
+                     <field name="text" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="valuationRange">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="low" type="reference">
+                        <options>
+                           <option name="referenceTo">low</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="high" type="reference">
+                        <options>
+                           <option name="referenceTo">high</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="low">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="currency" type="string"/>
+                     <field name="text" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="high">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="currency" type="string"/>
+                     <field name="text" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="localRealEstate">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="region" type="reference">
+                        <options>
+                           <option name="referenceTo">region</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="region">
+                  <description>An automatically generated process object</description>
+                  <detail>
+                     <field name="id" type="int"/>
+                     <field name="name" type="string"/>
+                     <field name="type" type="string"/>
+                     <field name="zindexValue" type="string"/>
+                     <field name="links" type="reference">
+                        <options>
+                           <option name="referenceTo">links</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>7vWfiTWOx2ffdiFAx3ujsM</types1:GUID>
+      <types1:DisplayName>Zillow API Services</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-06T12:44:32.798Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

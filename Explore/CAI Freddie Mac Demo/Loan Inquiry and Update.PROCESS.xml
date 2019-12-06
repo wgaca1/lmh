@@ -1,0 +1,193 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>XZgjjKPQE8jIw8j-gt-5631222-2019-10-01T15:07:14.792Z::pd.xml</types1:EntryId>
+      <types1:Name>Loan_Inquiry_and_Update</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description>Use property address in Loan in Salesforce to retrieve property valuation from Zillow; Record that activity in the Activity History on the Loan in Salesforce</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags>.anonymous</types1:Tags>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>LMH.suborg</types1:CreatedBy>
+      <types1:CreationDate>2019-10-01T15:07:15Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:PublishedBy>LMH.suborg</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-01T15:21:54Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/spi.Loan_Inquiry_and_Update/Loan_Inquiry_and_Update.pd.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Loan Inquiry and Update"
+                  name="Loan_Inquiry_and_Update">
+            <appliesTo/>
+            <description>Use property address in Loan in Salesforce to retrieve property valuation from Zillow; Record that activity in the Activity History on the Loan in Salesforce</description>
+            <tags>.anonymous</tags>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description=""
+                          name="LoanID Input"
+                          required="true"
+                          type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="Message" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="Low Valuation" type="currency">
+                  <options>
+                     <option name="scale">2</option>
+                     <option name="hide_currency_symbol">false</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="High Valuation" type="currency">
+                  <options>
+                     <option name="scale">2</option>
+                     <option name="hide_currency_symbol">false</option>
+                     <option name="required">false</option>
+                  </options>
+               </field>
+               <field description="" name="ID for Loan in Salesforce" type="reference">
+                  <options>
+                     <option name="referenceTo">Salesforce-FreddieMacWorkshop:Loan__c</option>
+                     <option name="required">false</option>
+                     <option name="guid">g9NkPkDX4i8gMlnY9yN3cd</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="normal">
+               <rest>
+                  <allowAnonymousAccess/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="jmdjn54p" targetId="jmdjn54o"/>
+               </start>
+               <assignment id="jmdjn54o">
+                  <title>Lookup Loan ID in Salesforce</title>
+                  <operation source="query" to="output.ID for Loan in Salesforce">
+                     <query from="Salesforce-FreddieMacWorkshop:Loan__c">
+                        <where>Loan_ID__c = '{$input.LoanIDInput}'</where>
+                     </query>
+                  </operation>
+                  <link id="jmgelxff" targetId="jmgelxfe"/>
+               </assignment>
+               <container id="jmgelxfe" type="exclusive">
+                  <title>Check if Loan ID was found in Salesforce</title>
+                  <flow id="jmgelxfi">
+                     <service id="jmgelxgl">
+                        <title>Get Property Valuation from Address</title>
+                        <serviceName>ZillowConnection:Get Property Valuation from Address</serviceName>
+                        <serviceGUID>7FpfzKALKTceFL1HCnLuqQ</serviceGUID>
+                        <serviceInput>
+                           <parameter name="address" source="field" updatable="true">output.ID for Loan in Salesforce.Property_Address__c</parameter>
+                           <parameter name="citystatezip" source="constant">{$output.IDforLoaninSalesforce.Property_City__c} {$output.IDforLoaninSalesforce.Property_State__c} </parameter>
+                        </serviceInput>
+                        <link id="jmi6krnh" targetId="jmi6krng"/>
+                     </service>
+                     <container id="jmi6krng" type="exclusive">
+                        <title>Was Property found?</title>
+                        <flow id="jmi70c9m">
+                           <assignment id="jmi70cah">
+                              <title>Set Output Message - property info not found</title>
+                              <operation source="constant" to="output.Message">Property Not Found by Zillow Lookup</operation>
+                              <link id="jmi70cay" targetId="jmi70cax"/>
+                           </assignment>
+                           <end id="jmi70cax">
+                              <title>End 2</title>
+                           </end>
+                        </flow>
+                        <flow id="jmi70c9o">
+                           <assignment id="jmuyv2mg">
+                              <title>Set Output Message - Invalid City/State</title>
+                              <operation source="constant" to="output.Message">Invalid City/State for Zillow lookup</operation>
+                              <link id="jmuyv2mh" targetId="jmi70ca9"/>
+                           </assignment>
+                           <end id="jmi70ca9"/>
+                        </flow>
+                        <flow id="jmuyv2m5">
+                           <assignment id="jmuyv2m8">
+                              <title>Put High Valuation, Low Valuation in Output message</title>
+                              <operation source="field" to="output.High Valuation">output.Valuation Range High</operation>
+                              <operation source="field" to="output.Low Valuation">output.Valuation Range Low</operation>
+                              <link id="jpk3vlz8" targetId="jpk3vlz7"/>
+                           </assignment>
+                           <create id="jpk3vlz7">
+                              <title>Record High Valuation on Loan in Salesforce</title>
+                              <entityName>Salesforce-FreddieMacWorkshop:Task</entityName>
+                              <createInput>
+                                 <parameter name="WhatId" source="field">output.ID for Loan in Salesforce</parameter>
+                                 <parameter name="Subject" source="constant" updatable="true">Loan Inquiry Mode</parameter>
+                                 <parameter name="Status" source="constant" updatable="true">Completed</parameter>
+                                 <parameter name="Description" source="constant" updatable="true">High Valuation  {infa:format($output.HighValuation, "#.00")} </parameter>
+                              </createInput>
+                              <link id="jpk3vlz9" targetId="jmuyv2m7"/>
+                           </create>
+                           <end id="jmuyv2m7">
+                              <title>End</title>
+                           </end>
+                        </flow>
+                        <link id="jmi70c9k" targetId="jmi70c9m" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$output.Code}</arg>
+                                 <arg name="right">508</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="jmi70c9l" targetId="jmi70c9o" type="containerLink">
+                           <condition source="formula">
+                              <function name="string-equals">
+                                 <arg name="left">{$output.Code}</arg>
+                                 <arg name="right">501</arg>
+                              </function>
+                           </condition>
+                        </link>
+                        <link id="jmuyv2m4" targetId="jmuyv2m5" type="containerLink"/>
+                     </container>
+                  </flow>
+                  <flow id="jmgelxfl">
+                     <assignment id="jmgelxfw">
+                        <title>Set Output Message - Loan Not Found</title>
+                        <operation source="constant" to="output.Message">Loan ID not found</operation>
+                        <link id="jmgelxgd" targetId="jmgelxgc"/>
+                     </assignment>
+                     <end id="jmgelxgc">
+                        <title>End 1</title>
+                     </end>
+                  </flow>
+                  <link id="jmgelxfh" targetId="jmgelxfi" type="containerLink">
+                     <condition source="formula">
+                        <function name="set">
+                           <arg name="field">{$output.IDforLoaninSalesforce}</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="jmgelxfk" targetId="jmgelxfl" type="containerLink">
+                     <condition source="formula">
+                        <function name="unset">
+                           <arg name="field">{$output.IDforLoaninSalesforce}</arg>
+                        </function>
+                     </condition>
+                  </link>
+               </container>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>hIB3Wx6IpqNifepnJrkAUs</types1:GUID>
+      <types1:DisplayName>Loan Inquiry and Update</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-12-06T12:44:32.989Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

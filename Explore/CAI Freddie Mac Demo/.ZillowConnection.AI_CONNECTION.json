@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "7FpfzKALKTceFL1HCnLuqQ",
+    "name" : "ZillowConnection",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "Dmi3wOLIFvukNXH-gt-2533484-2019-10-01T15:07:14.481Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "7vWfiTWOx2ffdiFAx3ujsM",
+    "name" : "Zillow API Services",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "gchwAQlBWlD2pHA-gt-5316738-2019-10-01T15:07:14.101Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/CAI Freddie Mac Demo"
+  } ]
+}

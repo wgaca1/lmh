@@ -1,0 +1,110 @@
+{
+  "objectInfo" : {
+    "id" : "51zjFkAJUAnjSYSximjX4b",
+    "name" : "mct_Replicate_SQL",
+    "type" : "MTT",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010V6D0Z00000000001M"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "zip",
+  "objectRefs" : [ {
+    "id" : "3XoniAs35WEeCRKOzc2sON",
+    "name" : "SQL Server RDS",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010V6D0B00000000001D"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "7sclivC9auIhpWcjSjeQ4p",
+    "name" : "Azure SQL DB",
+    "type" : "Connection",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010V6D0B00000000000E"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "COMPLETE"
+      }
+    },
+    "path" : "/SYS"
+  }, {
+    "id" : "2sRuE9JUBb3bW8TrfRmXo6",
+    "name" : "m_Replicate_SQL",
+    "type" : "DTEMPLATE",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010V6D170000000000C9"
+      },
+      "contextAttributes" : [ {
+        "name" : "id",
+        "value" : "@1"
+      } ],
+      "additionalInfo" : {
+        "description" : "Extracts data incrementally from an SQL Server database table or view based on its timestamp and loads it to a dynamically created target. \n\nThe Mapping task extracts only new and changed records each time it runs.\n\nThe Mapping task extracts data from the source starting at the last saved timestamp value  (ms precision). The last saved timestamp value is stored in in-out parameter, v_max_value.\n\nIf you create a relational target, the Mapping task inserts data into the target table the first time it runs. Subsequent runs can load data using update or upsert operations. If you create a flat file target, the Mapping task re-creates the target file each time it runs.",
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Default"
+  }, {
+    "id" : "ctuGF3vHlInhaN8lald70L",
+    "name" : "USW1PF0WZ3PL",
+    "type" : "AgentGroup",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "010V6D25000000000002"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : null,
+        "contentType" : "JSON",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/SYS"
+  } ]
+}

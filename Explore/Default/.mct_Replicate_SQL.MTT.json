@@ -16,7 +16,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "",
+        "description" : "Update Description",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }
@@ -80,7 +80,7 @@
         "value" : "@1"
       } ],
       "additionalInfo" : {
-        "description" : "Extracts data incrementally from an SQL Server database table or view based on its timestamp and loads it to a dynamically created target. \n\nThe Mapping task extracts only new and changed records each time it runs.\n\nThe Mapping task extracts data from the source starting at the last saved timestamp value  (ms precision). The last saved timestamp value is stored in in-out parameter, v_max_value.\n\nIf you create a relational target, the Mapping task inserts data into the target table the first time it runs. Subsequent runs can load data using update or upsert operations. If you create a flat file target, the Mapping task re-creates the target file each time it runs.",
+        "description" : "Update Description: \n\nExtracts data incrementally from an SQL Server database table or view based on its timestamp and loads it to a dynamically created target. \n\nThe Mapping task extracts only new and changed records each time it runs.\n\nThe Mapping task extracts data from the source starting at the last saved timestamp value  (ms precision). The last saved timestamp value is stored in in-out parameter, v_max_value.\n\nIf you create a relational target, the Mapping task inserts data into the target table the first time it runs. Subsequent runs can load data using update or upsert operations. If you create a flat file target, the Mapping task re-creates the target file each time it runs.",
         "contentType" : "JSON",
         "documentState" : "VALID"
       }

@@ -13,10 +13,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>LMH.suborg</types1:CreatedBy>
       <types1:CreationDate>2019-10-01T15:07:14Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>LMH.suborg</types1:ModifiedBy>
+      <types1:ModificationDate>2019-12-10T20:51:30Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>LMH.suborg</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-01T15:09:54Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-12-10T20:51:38Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/rt.connection/ZillowConnection/ZillowConnection.conn.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -42,5 +43,5 @@
       <types1:GUID>7FpfzKALKTceFL1HCnLuqQ</types1:GUID>
       <types1:DisplayName>ZillowConnection</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-12-06T12:44:32.898Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-12-11T21:45:21.78Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

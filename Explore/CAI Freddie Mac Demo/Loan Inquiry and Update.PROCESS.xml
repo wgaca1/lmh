@@ -4,7 +4,9 @@
       <types1:EntryId>XZgjjKPQE8jIw8j-gt-5631222-2019-10-01T15:07:14.792Z::pd.xml</types1:EntryId>
       <types1:Name>Loan_Inquiry_and_Update</types1:Name>
       <types1:MimeType>application/xml+process</types1:MimeType>
-      <types1:Description>Use property address in Loan in Salesforce to retrieve property valuation from Zillow; Record that activity in the Activity History on the Loan in Salesforce</types1:Description>
+      <types1:Description>Update description
+
+Use property address in Loan in Salesforce to retrieve property valuation from Zillow; Record that activity in the Activity History on the Loan in Salesforce</types1:Description>
       <types1:AppliesTo/>
       <types1:Tags>.anonymous</types1:Tags>
       <types1:VersionLabel>1.0</types1:VersionLabel>
@@ -12,10 +14,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>LMH.suborg</types1:CreatedBy>
       <types1:CreationDate>2019-10-01T15:07:15Z</types1:CreationDate>
-      <types1:ModifiedBy/>
-      <types1:PublicationStatus>published</types1:PublicationStatus>
+      <types1:ModifiedBy>LMH.suborg</types1:ModifiedBy>
+      <types1:ModificationDate>2019-12-11T21:44:32Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
       <types1:PublishedBy>LMH.suborg</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-01T15:21:54Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-12-10T20:51:40Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.Loan_Inquiry_and_Update/Loan_Inquiry_and_Update.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -24,7 +27,9 @@
                   displayName="Loan Inquiry and Update"
                   name="Loan_Inquiry_and_Update">
             <appliesTo/>
-            <description>Use property address in Loan in Salesforce to retrieve property valuation from Zillow; Record that activity in the Activity History on the Loan in Salesforce</description>
+            <description>Update description
+
+Use property address in Loan in Salesforce to retrieve property valuation from Zillow; Record that activity in the Activity History on the Loan in Salesforce</description>
             <tags>.anonymous</tags>
             <generator>Informatica Process Designer 11</generator>
             <input>
@@ -189,5 +194,5 @@
       <types1:GUID>hIB3Wx6IpqNifepnJrkAUs</types1:GUID>
       <types1:DisplayName>Loan Inquiry and Update</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-12-06T12:44:32.989Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-12-11T21:45:21.852Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

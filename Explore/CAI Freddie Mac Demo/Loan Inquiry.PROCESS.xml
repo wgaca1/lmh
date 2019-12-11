@@ -12,10 +12,11 @@
       <types1:ProcessGroup/>
       <types1:CreatedBy>LMH.suborg</types1:CreatedBy>
       <types1:CreationDate>2019-10-01T15:07:15Z</types1:CreationDate>
-      <types1:ModifiedBy/>
+      <types1:ModifiedBy>LMH.suborg</types1:ModifiedBy>
+      <types1:ModificationDate>2019-12-10T20:51:30Z</types1:ModificationDate>
       <types1:PublicationStatus>published</types1:PublicationStatus>
       <types1:PublishedBy>LMH.suborg</types1:PublishedBy>
-      <types1:PublicationDate>2019-10-01T15:19:36Z</types1:PublicationDate>
+      <types1:PublicationDate>2019-12-10T20:51:42Z</types1:PublicationDate>
       <types1:PublishedContributionId>project:/spi.Loan_Inquiry/Loan_Inquiry.pd.xml</types1:PublishedContributionId>
       <types1:AutosaveExists>false</types1:AutosaveExists>
       <types1:Entry>
@@ -178,5 +179,5 @@
       <types1:GUID>iiDEsnFtfwdbylMduqw8sF</types1:GUID>
       <types1:DisplayName>Loan Inquiry</types1:DisplayName>
    </types1:Item>
-   <types1:CurrentServerDateTime>2019-12-06T12:44:32.978Z</types1:CurrentServerDateTime>
+   <types1:CurrentServerDateTime>2019-12-11T21:45:21.845Z</types1:CurrentServerDateTime>
 </aetgt:getResponse>

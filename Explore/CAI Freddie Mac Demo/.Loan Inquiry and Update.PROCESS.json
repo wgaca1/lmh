@@ -13,7 +13,7 @@
       },
       "contextAttributes" : null,
       "additionalInfo" : {
-        "description" : "Use property address in Loan in Salesforce to retrieve property valuation from Zillow; Record that activity in the Activity History on the Loan in Salesforce",
+        "description" : "Update description\n\nUse property address in Loan in Salesforce to retrieve property valuation from Zillow; Record that activity in the Activity History on the Loan in Salesforce",
         "contentType" : "application/json; charset=utf-8",
         "documentState" : "VALID"
       }
